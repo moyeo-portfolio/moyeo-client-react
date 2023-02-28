@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import "styles/Footer.scss";
 
 function Footers(): JSX.Element {
   return (
-    <div>
-      Footers
+    <div className="footer-main">
+      <div className="center footer-box">Footers</div>
     </div>
   );
 }

@@ -1,16 +1,25 @@
-import React from 'react';
+import React from "react";
+import "styles/Moyeo.scss";
 
 interface IMoyeo {
-    state: {
-        setShow: Function
-    }
+  state: {
+    setShow: Function;
+  };
 }
 
-function Moyeo({state}: IMoyeo): JSX.Element {
+function Moyeo({ state }: IMoyeo): JSX.Element {
   return (
-    <div>
-      Moyeo가 통통튀는
-      <div onClick={()=>{state.setShow(true)}}>Next</div>
+    <div className="moyeo-main">
+      <div className="moyeo-box">
+        Moyeo
+        <div
+          onClick={() => {
+            state.setShow(true);
+          }}
+        >
+          Next
+        </div>
+      </div>
     </div>
   );
 }

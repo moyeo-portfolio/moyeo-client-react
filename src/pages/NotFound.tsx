@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import "styles/NotFound.scss";
 
 function NotFound(): JSX.Element {
   return (
-    <div>
-      NotFound
+    <div className="notfound-main">
+      <div className="notfound-box">404</div>
     </div>
   );
 }
