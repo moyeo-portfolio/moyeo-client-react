@@ -1,5 +1,5 @@
-const url = ""
-export const HomeUrl = url + "/"
-export const MypageUrl = url + "/Mypage"
-export const PortfolioUrl = url + "/Portfolio"
-export const ExperienceUrl = url + "/Experience"
+const url = "";
+export const HomeUrl = url + "/";
+export const DeveloperUrl = url + "/Developer";
+export const PortfolioUrl = url + "/Portfolio";
+export const ExperienceUrl = url + "/Experience";

@@ -7,30 +7,28 @@ import NotFound from "pages/NotFound";
 import Headers from "components/Headers";
 import Footers from "components/Footers";
 import Home from "pages/Home";
-import Mypage from "pages/Mypage";
+import Developer from "pages/Developer";
 import Portfolio from "pages/Portfolio";
 import Experience from "pages/Experience";
 
-import { HomeUrl, MypageUrl, PortfolioUrl, ExperienceUrl } from "Router";
+import { HomeUrl, DeveloperUrl, PortfolioUrl, ExperienceUrl } from "Router";
 
 function App(): JSX.Element {
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(true);
 
   return (
     <BrowserRouter>
       <div className="app-main">
-        {show && <Headers />}
+        {show && <Moyeo state={{ setShow: setShow }} />}
+        <Headers />
         <Routes>
-          <Route
-            path={HomeUrl}
-            element={show ? <Home /> : <Moyeo state={{ setShow: setShow }} />}
-          />
-          <Route path={MypageUrl} element={<Mypage />} />
+          <Route path={HomeUrl} element={<Home />} />
+          <Route path={DeveloperUrl} element={<Developer />} />
           <Route path={PortfolioUrl} element={<Portfolio />} />
           <Route path={ExperienceUrl} element={<Experience />} />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
-        {show && <Footers />}
+        <Footers />
       </div>
     </BrowserRouter>
   );
