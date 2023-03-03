@@ -1,0 +1,59 @@
+@import "styles/reset.scss";
+
+.developer-middle-box {
+  height: 500px;
+  display: flex;
+}
+.developer-middle-box-in {
+  width: 580px;
+  margin: auto;
+  display: inline-block;
+  background-color: green;
+}
+
+.developer-top-nickname {
+  height: 50px;
+  line-height: 47px;
+  padding: 0 20px;
+  align-items: center;
+
+  font-size: 18px;
+  color: $N60;
+  border-bottom: 3px solid $N20;
+  transition: 0.3s all;
+
+  &:hover {
+    color: $N80;
+    border-bottom: 3px solid $N60;
+    transition: 0.3s all;
+  }
+  &-act {
+    pointer-events: none;
+
+    color: $black;
+    border-bottom: 3px solid $black;
+  }
+}
+.developer-top-nickname-act {
+}
+
+// components/developers/DeveloperDetail.tsx
+.developer-detail-left {
+  &-box {
+    width: 290px;
+    height: 380px;
+    background-color: yellow;
+  }
+
+  &-frame {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
