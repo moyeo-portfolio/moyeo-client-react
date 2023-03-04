@@ -5,9 +5,11 @@
   height: 100px;
 
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0;
+  
   background-color: $N20;
+  z-index: 900;
 }
 .header-box {
   margin: auto;

@@ -13,7 +13,8 @@ export default function Developers(): JSX.Element {
       <div className="center">
         <div className="developer-main">
           <TopSlide state={{ who: who, setWho: setWho }} />
-          {/* <div className="developer-middle-box">
+          <div className="fake-top-slide"></div>
+          <div className="developer-middle-box">
             {developersDetail.map((data: IDevelopers, idx: number) => {
               return (
                 idx === who && (
@@ -23,7 +24,12 @@ export default function Developers(): JSX.Element {
                 )
               );
             })}
-          </div> */}
+          </div>
+        </div>
+        <div>
+          <div>안녕하세요</div>
+          <div>안녕하세요</div>
+          <div>안녕하세요</div>
         </div>
       </div>
     </div>

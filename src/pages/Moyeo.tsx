@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "styles/Moyeo.scss";
 
+import axios from 'axios';
+
 interface IMoyeo {
   state: {
     setShow: Function;

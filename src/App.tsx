@@ -28,7 +28,7 @@ function App(): JSX.Element {
           <Route path={ExperienceUrl} element={<Experience />} />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
-        <Footers />
+        {/* <Footers /> */}
       </div>
     </BrowserRouter>
   );

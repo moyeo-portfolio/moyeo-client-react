@@ -11,13 +11,15 @@ export default function DeveloperDetail({
           <img className="developer-detail-left-img" src={data.img} />
         </div>
       </div>
-      <div>
-        <div>{data.name}</div>
-        <div>{data.nickname}</div>
-        <div>{data.phone}</div>
-        <div>{data.email}</div>
-        <div>{data.github}</div>
-        <div>{data.blog}</div>
+      <div className="developer-detail-right-box">
+        <div className="developer-detail-right-box-in">
+          <div><span>이름: </span>{data.name}</div>
+          <div><span>닉네임: </span>{data.nickname}</div>
+          <div><span>전화번호: </span>{data.phone}</div>
+          <div><span>이메일: </span>{data.email}</div>
+          <div><span>깃허브: </span>{data.github}</div>
+          <div><span>블로그: </span>{data.blog}</div>
+        </div>
       </div>
     </div>
   );

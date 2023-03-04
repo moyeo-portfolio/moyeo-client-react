@@ -4,7 +4,7 @@ import "styles/Header.scss";
 
 import { HomeUrl, DeveloperUrl, PortfolioUrl, ExperienceUrl } from "Router";
 
-function Headers(): JSX.Element {
+export default function Headers(): JSX.Element {
   return (
     <div className="header-main">
       <div className="center header-box">
@@ -20,4 +20,3 @@ function Headers(): JSX.Element {
   );
 }
 
-export default Headers;

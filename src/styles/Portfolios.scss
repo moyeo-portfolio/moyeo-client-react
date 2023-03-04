@@ -1,0 +1,62 @@
+@import "styles/reset.scss";
+
+.portfolios-main {
+  position: relative;
+}
+
+.portfolios-right {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  // bottom: 0;
+}
+
+// components/portfolios/PortfolioDetail.tsx
+.portfolio-detail-main {
+}
+.portfolio-detail-box {
+  &-0 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+
+    border: 1px solid #000;
+    translate: all 1s;
+  }
+
+  &-1 {
+    width: 100%;
+    margin-top: 100px;
+
+    position: absolute;
+    top: 0;
+
+    border: 1px solid #000;
+    translate: all 1s;
+  }
+}
+
+.portfolio-detail-top {
+  width: 100%;
+}
+
+.portfolio-detail-middle {
+  &-0 {
+    width: 100%;
+  }
+
+  &-1 {
+    width: 30%;
+  }
+}
+
+.portfolio-detail-last {
+  &-0 {
+    display: none;
+  }
+
+  &-1 {
+    width: 70%;
+    display: block;
+  }
+}
