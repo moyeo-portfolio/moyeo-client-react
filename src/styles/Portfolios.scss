@@ -15,43 +15,65 @@
 .portfolio-detail-main {
 }
 .portfolio-detail-box {
+  border-radius: 10px;
+  border: 1px solid $black;
+  transition: 1s all;
+  background-color: $white;
+
   &-0 {
+    // height: 240px;
     margin-top: 50px;
     margin-bottom: 30px;
-    border-radius: 10px;
 
-    border: 1px solid #000;
-    translate: all 1s;
+    position: relative;
   }
 
   &-1 {
     width: 100%;
-    margin-top: 100px;
+    height: 1000px;
+    margin-top: 50px;
 
     position: absolute;
-    top: 0;
-
-    border: 1px solid #000;
-    translate: all 1s;
   }
+}
+.portfolio-detail-box-in {
+  padding: 20px;
 }
 
 .portfolio-detail-top {
   width: 100%;
+
+  &-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &-content {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &-framework {
+  }
+  &-link {
+  }
+  &-githublink {
+  }
 }
 
 .portfolio-detail-middle {
   &-0 {
     width: 100%;
+    display: none;
   }
 
   &-1 {
     width: 30%;
+    display: block;
   }
 }
 
 .portfolio-detail-last {
   &-0 {
+    width: 100%;
     display: none;
   }
 

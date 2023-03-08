@@ -1,7 +1,7 @@
 export const developers = ["Ez", "Orennamu"];
 export const developersDetail = [
   {
-    img: require("assets/Ez.png"),
+    img: require("assets/Ez/Ez.png"),
     name: "최예주",
     nickname: "Ez",
     phone: "010-2235-9031",
@@ -10,7 +10,7 @@ export const developersDetail = [
     blog: "https://velog.io/@cdpwn",
   },
   {
-    img: require("assets/Orennamu.png"),
+    img: require("assets/Orennamu/Orennamu.png"),
     name: "최진석",
     nickname: "Orennamu",
     phone: "010-6237-9031",

@@ -16,12 +16,7 @@ export default function Portfolios(): JSX.Element {
         <div className="portfolios-main">
           <TopSlide state={{ who: who, setWho: setWho }} />
           <div className="fake-top-slide"></div>
-          <div
-            className="portfolios-right"
-            onClick={() => {
-              console.log("a");
-            }}
-          >
+          <div className="portfolios-right">
             <button
               onClick={() => {
                 setWhat(0);
@@ -41,7 +36,7 @@ export default function Portfolios(): JSX.Element {
             return (
               idx === who && (
                 <div key={idx}>
-                  <PortfolioDetail what={what} data={data} />
+                  <PortfolioDetail who={who} what={what} data={data} />
                 </div>
               )
             );

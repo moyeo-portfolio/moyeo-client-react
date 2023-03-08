@@ -1,4 +1,5 @@
 export interface IPortfoliosProps {
+  who: number;
   what: number;
   data: IPortfolios;
 }
