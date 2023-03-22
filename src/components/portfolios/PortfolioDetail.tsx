@@ -26,10 +26,12 @@ export default function PortfolioDetail({
             key={idx}
             className={"portfolio-detail-box portfolio-detail-box-" + what}
             style={{
-              marginTop: what === 0 ? 250 * idx : 0,
+              marginLeft: what === 0 ? 10 + 300 * (idx % 4) : 0,
+              marginTop: what === 0 ? 420 * Math.floor(idx / 4) : 0,
             }}
           >
-            {/* <div className="portfolio-detail-box-in">
+            {idx}
+            <div className="portfolio-detail-box-in">
               <div className={top}>
                 <div className={top + "-title"}>{data.title}</div>
                 <div className={top + "-content"}>{data.content}</div>
@@ -58,7 +60,7 @@ export default function PortfolioDetail({
                   <div className={last + "-experience"}>{data.experience}</div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         );
       })}
