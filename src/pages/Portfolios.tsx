@@ -4,7 +4,7 @@ import { IPortfolios } from "interface/Portfolio";
 import "styles/Portfolios.scss";
 
 import { portfoliosDetail } from "static/PortfoliosData";
-import TopSlide from "components/TopSlide";
+import TopSlide from "components/TopScroll";
 
 export default function Portfolios(): JSX.Element {
   const [who, setWho] = useState(0);
@@ -14,7 +14,6 @@ export default function Portfolios(): JSX.Element {
     <div className="padding-top">
       <div className="center">
         <div className="portfolios-main">
-          <TopSlide state={{ who: who, setWho: setWho }} />
           <div className="fake-top-slide"></div>
           <div className="portfolios-right">
             <button

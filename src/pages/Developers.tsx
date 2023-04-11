@@ -3,7 +3,7 @@ import DeveloperDetail from "components/developers/DeveloperDetail";
 import "styles/Developers.scss";
 import { IDevelopers } from "interface/Developers";
 import { developers, developersDetail } from "static/DevelopersData";
-import TopSlide from "components/TopSlide";
+import TopSlide from "components/TopScroll";
 
 export default function Developers(): JSX.Element {
   const [who, setWho] = useState(0);
@@ -12,7 +12,6 @@ export default function Developers(): JSX.Element {
     <div className="padding-top">
       <div className="center">
         <div className="developer-main">
-          <TopSlide state={{ who: who, setWho: setWho }} />
           <div className="fake-top-slide"></div>
           <div className="developer-middle-box">
             {developersDetail.map((data: IDevelopers, idx: number) => {

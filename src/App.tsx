@@ -2,30 +2,29 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-import Moyeo from "pages/Moyeo";
 import NotFound from "pages/NotFound";
 import Headers from "components/Headers";
 import Footers from "components/Footers";
+
 import Home from "pages/Home";
 import Developers from "pages/Developers";
 import Portfolios from "pages/Portfolios";
-import Experience from "pages/Experience";
+import SkillStack from "pages/SkillStack";
 
-import { HomeUrl, DeveloperUrl, PortfolioUrl, ExperienceUrl } from "Router";
+import { HomeUrl, DeveloperUrl, PortfolioUrl, SkillStackUrl } from "Router";
+import TopScroll from "components/TopScroll";
 
 function App(): JSX.Element {
-  const [show, setShow] = useState<boolean>(true);
-
   return (
     <BrowserRouter>
       <div className="app-main">
-        {show && <Moyeo state={{ setShow: setShow }} />}
         <Headers />
+        <TopScroll />
         <Routes>
           <Route path={HomeUrl} element={<Home />} />
           <Route path={DeveloperUrl} element={<Developers />} />
           <Route path={PortfolioUrl} element={<Portfolios />} />
-          <Route path={ExperienceUrl} element={<Experience />} />
+          <Route path={SkillStackUrl} element={<SkillStack />} />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
         {/* <Footers /> */}

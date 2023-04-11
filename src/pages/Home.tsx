@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "styles/Home.scss";
 
 function Home(): JSX.Element {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate(`/Developer`);
+    }, 3000);
+  }, []);
+
   return (
-    <div className="padding-top">
-      <div className="center">
-        Home - SEO 위해 - 메타데이터 가져오기 위해 서버 필요
-        {/* Home, Moyeo 서버에 대한 설명, Moyeo 프론트/백 기술 스택, 기술 스택 선택한 이유 */}
-      </div>
+    <div className="home">
+      <div>Hi</div>
     </div>
   );
 }

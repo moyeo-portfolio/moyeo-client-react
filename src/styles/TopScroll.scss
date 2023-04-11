@@ -1,0 +1,13 @@
+.topscroll,
+.topscroll-bg {
+  width: 100%;
+  height: 80px;
+
+  position: fixed;
+  top: 100px;
+}
+
+.topscroll-bg {
+  opacity: 0.6;
+  background-color: black;
+}

@@ -1,26 +1,46 @@
 @import "styles/reset.scss";
 
-.header-main {
+.header {
   width: 100%;
   height: 100px;
 
   display: flex;
   position: fixed;
   top: 0;
-  
-  background-color: $N20;
+
+  background-color: $white;
   z-index: 900;
 }
-.header-box {
+.header-in {
   margin: auto;
+  display: flex;
 }
 
 .header-logo {
-  margin-left: 5px;
-}
-.header-lft-box {
-  float: right;
-  a {
-    margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 68px;
+  display: flex;
+  img {
+    width: 126px;
+    height: 32px;
+    margin: auto;
   }
+}
+
+.header-menu {
+  display: flex;
+  a {
+    margin: auto;
+
+    font-size: 24px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.6px $white;
+  }
+}
+.header-menu-in {
+  height: 52px;
+  margin-right: 52px;
+  display: flex;
+
+  border-bottom: 4px solid $black;
 }

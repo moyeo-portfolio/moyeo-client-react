@@ -1,22 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "styles/Header.scss";
+import logo from "assets/logo.png";
 
-import { HomeUrl, DeveloperUrl, PortfolioUrl, ExperienceUrl } from "Router";
+import { DeveloperUrl, PortfolioUrl, SkillStackUrl } from "Router";
 
 export default function Headers(): JSX.Element {
   return (
-    <div className="header-main">
-      <div className="center header-box">
-        <span className="header-logo">Headers</span>
-        <div className="header-lft-box">
-          <Link to={HomeUrl}>Home</Link>
-          <Link to={DeveloperUrl}>Developer</Link>
-          <Link to={PortfolioUrl}>Portfolio</Link>
-          <Link to={ExperienceUrl}>Experience</Link>
+    <div className="header">
+      <div className="center header-in">
+        <span className="header-logo">
+          <img src={logo} />
+        </span>
+        <div className="header-menu">
+          <div className="header-menu-in">
+            <Link to={DeveloperUrl}>Developer</Link>
+          </div>
+          <div className="header-menu-in">
+            <Link to={PortfolioUrl}>Portfolio</Link>
+          </div>
+          <div className="header-menu-in">
+            <Link to={SkillStackUrl}>Skill&Stack</Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-

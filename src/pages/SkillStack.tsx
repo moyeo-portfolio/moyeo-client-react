@@ -2,7 +2,7 @@ import Backend from "components/Experience/Backend";
 import Frontend from "components/Experience/Frontend";
 import React, { useState } from "react";
 
-function Experience(): JSX.Element {
+export default function SkillStack(): JSX.Element {
   const [what, setWhat] = useState(0);
   const ExperienceComponents = [<Frontend />, <Backend />];
 
@@ -32,5 +32,3 @@ function Experience(): JSX.Element {
     </div>
   );
 }
-
-export default Experience;
