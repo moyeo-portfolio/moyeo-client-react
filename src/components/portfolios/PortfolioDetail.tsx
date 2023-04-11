@@ -25,7 +25,12 @@ export default function PortfolioDetail({
           <div
             key={idx}
             className={"portfolio-detail-box portfolio-detail-box-" + what}
+            style={{
+              marginLeft: what === 0 ? 10 + 300 * (idx % 4) : 0,
+              marginTop: what === 0 ? 420 * Math.floor(idx / 4) : 0,
+            }}
           >
+            {idx}
             <div className="portfolio-detail-box-in">
               <div className={top}>
                 <div className={top + "-title"}>{data.title}</div>

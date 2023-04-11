@@ -21,7 +21,7 @@ export default function Portfolios(): JSX.Element {
                 setWhat(0);
               }}
             >
-              리스트
+              전체적
             </button>
             <button
               onClick={() => {
@@ -30,6 +30,13 @@ export default function Portfolios(): JSX.Element {
             >
               개별
             </button>
+            {/* <button
+              onClick={() => {
+                setWhat(2);
+              }}
+            >
+              리스트
+            </button> */}
           </div>
           {portfoliosDetail.map((data: IPortfolios, idx: number) => {
             return (
