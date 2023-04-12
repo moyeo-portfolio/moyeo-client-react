@@ -7,8 +7,8 @@ import Headers from "components/Headers";
 import Footers from "components/Footers";
 
 import Home from "pages/Home";
-import Developers from "pages/Developers";
-import Portfolios from "pages/Portfolios";
+import Developer from "pages/Developer";
+import Portfolio from "pages/Portfolio";
 import SkillStack from "pages/SkillStack";
 
 import { HomeUrl, DeveloperUrl, PortfolioUrl, SkillStackUrl } from "Router";
@@ -22,8 +22,8 @@ function App(): JSX.Element {
         <TopScroll />
         <Routes>
           <Route path={HomeUrl} element={<Home />} />
-          <Route path={DeveloperUrl} element={<Developers />} />
-          <Route path={PortfolioUrl} element={<Portfolios />} />
+          <Route path={DeveloperUrl} element={<Developer />} />
+          <Route path={PortfolioUrl} element={<Portfolio />} />
           <Route path={SkillStackUrl} element={<SkillStack />} />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
