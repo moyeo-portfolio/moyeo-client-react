@@ -13,7 +13,7 @@ export default function Headers(): JSX.Element {
           <img src={logo} />
         </span>
         <div className="header-menu">
-          <div className="header-menu-in">
+          <div className="header-menu-in header-border">
             <Link to={DeveloperUrl}>Developer</Link>
           </div>
           <div className="header-menu-in">

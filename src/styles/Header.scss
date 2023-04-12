@@ -32,15 +32,16 @@
   a {
     margin: auto;
 
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
-    -webkit-text-stroke: 0.6px $white;
+    -webkit-text-stroke: 0.2px $white;
   }
 }
 .header-menu-in {
   height: 52px;
   margin-right: 52px;
   display: flex;
-
+}
+.header-border {
   border-bottom: 4px solid $black;
 }
