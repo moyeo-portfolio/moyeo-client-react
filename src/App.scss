@@ -64,30 +64,26 @@ a {
   height: 100vh;
 }
 
-.center {
+.center-head {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
+  display: flex;
 }
+.center-body {
+  max-width: 1200px;
+  width: 100%;
+  height: calc(100% - 180px);
 
+  margin: auto;
+  display: flex;
+}
+.center-body-in {
+  padding: 0 10px;
+  margin: auto;
+}
 .padding-top {
-  padding-top: 100px;
-}
-.fake-top-slide {
-  padding-top: 50px;
-}
-
-.main-hr {
-  width: 100%;
-  max-width: 1200px;
-  height: 50px;
-
-  position: fixed;
-  top: 100;
-
-  border-bottom: 3px solid $N20;
-  background-color: $white;
-  z-index: 900;
+  padding-top: 180px;
 }
 
 .flex {

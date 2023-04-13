@@ -20,6 +20,7 @@ function App(): JSX.Element {
       <div className="app-main">
         <Headers />
         <TopScroll />
+        <div className="padding-top" />
         <Routes>
           <Route path={HomeUrl} element={<Home />} />
           <Route path={DeveloperUrl} element={<Developer />} />

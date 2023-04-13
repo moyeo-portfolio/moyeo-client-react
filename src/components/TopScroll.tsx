@@ -7,14 +7,10 @@ export default function TopScroll(): JSX.Element {
   // useEffect(() => {}, [who]);
 
   return (
-    <>
-      <div className="topscroll">
-        <div className="center">
-          <div>Hi</div>
-        </div>
+    <div className="topscroll">
+      <div className="center topscroll-in">
+        <div>Hi</div>
       </div>
-
-      <div className="topscroll-bg" />
-    </>
+    </div>
   );
 }

@@ -1,15 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "styles/Header.scss";
 import logo from "assets/logo.png";
 
 import { DeveloperUrl, PortfolioUrl, SkillStackUrl } from "Router";
 
 export default function Headers(): JSX.Element {
+  const navigate = useNavigate();
+
   return (
     <div className="header">
-      <div className="center header-in">
-        <span className="header-logo">
+      <div className="center-head header-in">
+        <span
+          className="header-logo"
+          onClick={() => {
+            navigate(`/`);
+          }}
+        >
           <img src={logo} />
         </span>
         <div className="header-menu">

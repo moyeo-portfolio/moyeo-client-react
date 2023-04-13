@@ -1,79 +1,56 @@
 @import "styles/reset.scss";
 
-.developer-middle-box {
-  height: 500px;
+.developer-box {
+  max-width: 600px;
+  min-width: 600px;
+  height: 380px;
+  margin: auto;
+
   display: flex;
 }
-.developer-middle-box-in {
-  width: 580px;
-  margin: auto;
-  display: inline-block;
-}
 
-.developer-top-nickname {
-  height: 50px;
-  line-height: 47px;
-  padding: 0 20px;
-  align-items: center;
-
-  cursor: pointer;
-  font-size: 18px;
-  color: $N60;
-  border-bottom: 3px solid $N20;
-  transition: 0.3s all;
-
-  &:hover {
-    color: $N80;
-    border-bottom: 3px solid $N60;
-    transition: 0.3s all;
-  }
-  &-act {
-    pointer-events: none;
-
-    color: $black;
-    border-bottom: 3px solid $black;
-  }
-}
-
-// components/developers/DeveloperDetail.tsx
-.developer-detail-left {
+.left {
   &-box {
-    width: 260px;
-    height: 340px;
-    margin-right: 20px;
-    background-color: $N20;
+    width: 290px;
+    height: 380px;
+    background-color: $Gray-04;
   }
-
-  &-frame {
-    width: 100%;
-    height: 100%;
-    padding: 10px 10px;
-  }
-
   &-img {
-    width: 100%;
-    height: 100%;
+    width: 270px;
+    height: 360px;
+    padding: 10px;
     object-fit: cover;
   }
 }
-
-.developer-detail-right {
+.right {
   &-box {
-    width: 300px;
-    height: 340px;
-
-    display: flex;
-    // background-color: $N20;
+    width: 290px;
+    height: 380px;
+    margin-left: 20px;
   }
 
-  &-box-in {
-    margin: auto;
+  &-text:nth-child(1) {
+    margin-top: 38px;
+  }
+  &-text {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 28px;
 
-    div {
-      margin-bottom: 10px;
-    }
+    font-size: 18px;
+    -webkit-text-stroke: 0.2px $white;
+
+    a,
     span {
-      font-weight: 700;
+      font-size: 16px;
+      -webkit-text-stroke: 0.2px $white;
+      text-decoration: underline;
+    }
+    a {
+      color: $purple;
     }
   }
+}
+
+@media (max-width: 767px) {
 }
