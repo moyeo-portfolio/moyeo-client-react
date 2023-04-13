@@ -22,7 +22,7 @@ function App(): JSX.Element {
     <BrowserRouter>
       <div className="app-main">
         <Headers menu={menu} setMenu={setMenu} />
-        <TopScroll setWho={setWho} />
+        <TopScroll who={who} setWho={setWho} />
         <div className="padding-top" />
         <Routes>
           <Route

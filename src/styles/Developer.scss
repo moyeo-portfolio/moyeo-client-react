@@ -1,5 +1,9 @@
 @import "styles/reset.scss";
 
+.developer-in {
+  min-width: 1200px;
+}
+
 .developer-box {
   max-width: 600px;
   min-width: 600px;
@@ -44,10 +48,10 @@
     span {
       font-size: 16px;
       -webkit-text-stroke: 0.2px $white;
-      text-decoration: underline;
     }
     a {
       color: $purple;
+      text-decoration: underline;
     }
   }
 }

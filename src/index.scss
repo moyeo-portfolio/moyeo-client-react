@@ -1,3 +1,5 @@
+@import "styles/reset.scss";
+
 @font-face {
   font-family: "CookieRunRegular";
   src: url(assets/fonts/CookieRun-Regular.ttf) format("truetype");
@@ -20,6 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 
+  color: $Gray-09;
   font-family: "CookieRunRegular";
   /* -webkit-text-stroke: 0.6px #fff; */
 }
