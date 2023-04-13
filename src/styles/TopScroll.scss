@@ -6,8 +6,83 @@
 
   position: fixed;
   top: 100px;
+  background-color: $Gray-08;
+  //   -webkit-user-drag: none;
+}
+
+.gradation-box {
+  width: 1200px;
+  height: 80px;
+  display: flex;
+
+  position: absolute;
+}
+.gradation {
+  width: 100%;
+  height: 80px;
+  &-left {
+    background: linear-gradient(
+      to right,
+      $Gray-08,
+      $Gray-07,
+      rgba(85, 85, 85, 0.6)
+    );
+  }
+
+  &-right {
+    background: linear-gradient(
+      to left,
+      $Gray-08,
+      $Gray-07,
+      rgba(85, 85, 85, 0.6)
+    );
+  }
+}
+
+.arrow-right,
+.arrow-left {
+  &-box {
+    width: 50px;
+    height: 100%;
+    margin-left: 41.3%;
+    display: flex;
+    position: absolute;
+    // background-color: red;
+  }
+
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+
+  border-radius: 30px;
+  background-color: $Gray-01;
+}
+.arrow-right {
+  &-box {
+    margin-left: calc(42% + 150px);
+  }
+}
+.main-developer {
+  min-width: 150px;
+}
+
+.topscroll-in {
+  min-width: 1050px;
+  height: 80px;
+  margin: 0 75px;
+  display: flex;
   background-color: $Gray-06;
 }
-.topscroll-in {
+.nickname-box-in {
+  min-width: 150px;
   height: 80px;
+  display: flex;
+  text-align: center;
+}
+.nickname {
+  margin: auto;
+  color: $Gray-01;
+  font-size: 20px;
+  -webkit-text-stroke: 0.2px $Gray-06;
 }

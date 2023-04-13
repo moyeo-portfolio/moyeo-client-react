@@ -34,6 +34,7 @@
   a {
     margin: auto;
 
+    color: $Gray-09;
     font-size: 18px;
     font-weight: 400;
     -webkit-text-stroke: 0.2px $white;
@@ -45,5 +46,5 @@
   display: flex;
 }
 .header-border {
-  border-bottom: 4px solid $black;
+  border-bottom: 4px solid $Gray-09;
 }

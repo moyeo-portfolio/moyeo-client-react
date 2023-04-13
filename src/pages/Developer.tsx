@@ -11,7 +11,7 @@ export default function Developer({ who }: any): JSX.Element {
         {developerDatas.map((devData: any, devDataIdx: number) => {
           return (
             who === devDataIdx && (
-              <div className="developer-box">
+              <div key={devDataIdx} className="developer-box">
                 <div className="left-box">
                   <img className="left-img" src={devData.img} />
                 </div>
