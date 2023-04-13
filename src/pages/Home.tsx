@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "styles/Home.scss";
 
-function Home(): JSX.Element {
+function Home({ setMenu, setWho }: any): JSX.Element {
   const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
+      setMenu(0);
+      setWho(0);
       navigate(`/Developer`);
     }, 3000);
   }, []);

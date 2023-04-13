@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IPortfoliosProps } from "interface/Portfolio";
-import { portfolio_data } from "static/PortfoliosData";
+import { portfolio_data } from "static/PortfolioDatas";
 import { Link } from "react-router-dom";
 import axios from "axios";
 

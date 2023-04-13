@@ -1,55 +1,38 @@
 import React, { useState } from "react";
-import PortfolioDetail from "components/portfolios/PortfolioDetail";
-import { IPortfolios } from "interface/Portfolio";
-import "styles/Portfolios.scss";
+import "styles/Portfolio.scss";
 
-import { portfoliosDetail } from "static/PortfoliosData";
-import TopSlide from "components/TopScroll";
-
-export default function Portfolios(): JSX.Element {
-  const [who, setWho] = useState(0);
-  const [what, setWhat] = useState(0);
-
+export default function Portfolios({ who }: any): JSX.Element {
   return (
-    <div className="padding-top">
-      <div className="center">
-        <div className="portfolios-main">
-          <div className="fake-top-slide"></div>
-          <div className="portfolios-right">
-            <button
-              onClick={() => {
-                setWhat(0);
-              }}
-            >
-              전체적
-            </button>
-            <button
-              onClick={() => {
-                setWhat(1);
-              }}
-            >
-              개별
-            </button>
-            {/* <button
-              onClick={() => {
-                setWhat(2);
-              }}
-            >
-              리스트
-            </button> */}
+    <div className="center-body">
+      <div className="center-body-in">
+        <div className="developer-box">
+          <div className="left-box">
+            {/* <img className="left-img" src={Ez} /> */}
           </div>
-          {portfoliosDetail.map((data: IPortfolios, idx: number) => {
-            return (
-              idx === who && (
-                <div key={idx}>
-                  <PortfolioDetail who={who} what={what} data={data} />
-                </div>
-              )
-            );
-          })}
-
-          {/* 시간순/구현경험/기여도,
-          각각에 대한 설명(모달) */}
+          <div className="right-box">
+            <div className="right-text">name: Ez</div>
+            <div className="right-text">
+              major: <span>Soongsil University</span>
+            </div>
+            <div className="right-text">
+              now: <span>graduation preagreement</span>
+            </div>
+            <div className="right-text">
+              email: <span>yeju1019@gmail.com</span>
+            </div>
+            <div className="right-text">
+              github:&nbsp;
+              <a href="https://github.com/choiyeju" target="_blank">
+                https://github.com/choiyeju
+              </a>
+            </div>
+            <div className="right-text">
+              blog:&nbsp;
+              <a href="https://velog.io/@cdpwn" target="_blank">
+                https://velog.io/@cdpwn
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
