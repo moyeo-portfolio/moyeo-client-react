@@ -5,6 +5,8 @@ import "styles/TopScroll.scss";
 interface Props {}
 
 export default function TopScroll({ who, setWho }: any): JSX.Element {
+  const [mouse, setMouse] = useState<boolean>(false);
+  const [startMove, setStartMove] = useState<number>(0);
   const [scroll, setScroll] = useState<number>(150 + who * 50); // 하나당 150
 
   const handleLeft = () => {
@@ -19,11 +21,19 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
   return (
     <div
       className="topscroll"
-      onMouseDown={() => {
-        console.log("a");
+      onMouseDown={(e) => {
+        setMouse(true);
+        setStartMove(e.clientX);
+      }}
+      onMouseMove={(e) => {
+        const move = e.clientX;
+        if (mouse) {
+          setScroll(scroll - (startMove - move));
+          console.log(scroll - (startMove - move));
+        }
       }}
       onMouseUp={() => {
-        console.log("b");
+        setMouse(false);
       }}
     >
       <div className="center-body">
@@ -47,17 +57,17 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
 
         <div className="gradation-box">
           <div className="gradation gradation-left" />
-          {scroll !== 150 && (
+          {/* {scroll !== 150 && (
             <div className="arrow-left-box">
               <div className="arrow-left" onClick={handleLeft} />
             </div>
-          )}
+          )} */}
           <div className="main-developer" />
-          {scroll !== 150 - (developerDatas.length - 1) * 50 && (
+          {/* {scroll !== 150 - (developerDatas.length - 1) * 50 && (
             <div className="arrow-right-box">
               <div className="arrow-right" onClick={handleRight} />
             </div>
-          )}
+          )} */}
           <div className="gradation gradation-right" />
         </div>
       </div>

@@ -7,7 +7,7 @@ import { developerDatas } from "static/Datas";
 export default function Developer({ who }: any): JSX.Element {
   return (
     <div className="center-body">
-      <div className="center-body-in">
+      <div className="center-body-in developer-in">
         {developerDatas.map((devData: any, devDataIdx: number) => {
           return (
             who === devDataIdx && (
