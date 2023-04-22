@@ -20,16 +20,16 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
   return (
     <div
       className="topscroll"
-      onMouseDown={(e) => {
-        setStartMove(e.clientX);
-      }}
-      onMouseMove={(e) => {}}
-      onMouseUpCapture={(e) => {
-        const move = startMove - e.clientX;
-        if (move >= 0 && scroll !== 150 - (developerDatas.length - 1) * 50)
-          handleRight();
-        else if (move <= 0 && scroll !== 150) handleLeft();
-      }}
+      // onMouseDown={(e) => {
+      //   setStartMove(e.clientX);
+      // }}
+      // onMouseMove={(e) => {}}
+      // onMouseUpCapture={(e) => {
+      //   const move = startMove - e.clientX;
+      //   if (move >= 0 && scroll !== 150 - (developerDatas.length - 1) * 50)
+      //     handleRight();
+      //   else if (move <= 0 && scroll !== 150) handleLeft();
+      // }}
     >
       <div className="center-body">
         <div className="topscroll-in">
