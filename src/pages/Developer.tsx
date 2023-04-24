@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "styles/Developer.scss";
 
-import Ez from "assets/Ez/Ez.png";
 import { developerDatas } from "static/Datas";
 
 export default function Developer({ who }: any): JSX.Element {

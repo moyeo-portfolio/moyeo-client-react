@@ -10,5 +10,9 @@ export const OrennamuDeveloper = {
 };
 
 export const OrennamuPortfolio = {
-  project: "",
+  portfolio: "Hi",
+};
+
+export const OrennamuSkillStack = {
+  skillstack: "Hi",
 };

@@ -19,6 +19,27 @@ export const EzDeveloper = {
   blog: "https://velog.io/@cdpwn",
 };
 
-export const EzPortfolio = {
-  project: "",
-};
+export const EzPortfolio = [
+  {
+    project: "Eatery",
+    organization: "수익형 앱 런칭 동아리 Central MakeUs Challenge 11기",
+    date: "2022.12 ~ 2023.03",
+    activity: "FrontEnd-Developer",
+    hashtags: ["React", "TypeScript"],
+    links: [
+      "https://apps.apple.com/kr/app/eatery/id6446631695",
+      "https://play.google.com/store/apps/details?id=com.bobplace.eatery&pli=1",
+    ],
+    githubLink: "https://github.com/Zelusik/frontend",
+    images: [
+      require("assets/Ez/Ez_eatery_img1.png"),
+      require("assets/Ez/Ez_eatery_img2.png"),
+    ],
+  },
+];
+
+export const EzSkillStack = [
+  {
+    skillstack: "Hi",
+  },
+];

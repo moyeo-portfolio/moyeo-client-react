@@ -31,7 +31,7 @@ function App(): JSX.Element {
           />
           <Route path={DeveloperUrl} element={<Developer who={who} />} />
           <Route path={PortfolioUrl} element={<Portfolio who={who} />} />
-          <Route path={SkillStackUrl} element={<SkillStack />} />
+          <Route path={SkillStackUrl} element={<SkillStack who={who} />} />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
         {/* <Footers /> */}
