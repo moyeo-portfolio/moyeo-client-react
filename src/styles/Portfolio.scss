@@ -2,16 +2,24 @@
 
 .portfolio-in {
   min-width: 1200px;
+  min-height: 700px;
+  position: relative;
 }
 
 .portfolio-box {
   max-width: 600px;
   min-width: 600px;
   height: 700px;
-  margin: auto;
 
-  display: flex;
+  // margin: auto;
+  // display: flex;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   border-radius: 10px;
   border: 1px solid $white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7), 0px 4px 250px $white;
+  background-color: $white;
 }

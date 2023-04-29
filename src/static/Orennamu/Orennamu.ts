@@ -9,10 +9,14 @@ export const OrennamuDeveloper = {
   blog: "",
 };
 
-export const OrennamuPortfolio = {
-  portfolio: "Hi",
-};
+export const OrennamuPortfolio = [
+  {
+    portfolio: "Hi",
+  },
+];
 
-export const OrennamuSkillStack = {
-  skillstack: "Hi",
-};
+export const OrennamuSkillStack = [
+  {
+    skillstack: "Hi",
+  },
+];

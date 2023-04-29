@@ -3,7 +3,7 @@ import {
   OrennamuDeveloper,
   OrennamuPortfolio,
   OrennamuSkillStack,
-} from "./Orennamu/Orennamu";
+} from "static/Orennamu/Orennamu";
 
 export const developerDatas = [EzDeveloper, OrennamuDeveloper];
 export const portfolioDatas = [EzPortfolio, OrennamuPortfolio];

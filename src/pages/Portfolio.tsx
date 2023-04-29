@@ -1,48 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "styles/Portfolio.scss";
 
 import { portfolioDatas } from "static/Datas";
 
 export default function Portfolio({ who }: any): JSX.Element {
+  const [focus, setFocus] = useState<any>(0);
+
   return (
     <div className="center-body">
-      <div className="center-body-in portfolio-in">
-        {portfolioDatas.map((portfolio: any, portfolioIdx: number) => {
+      <div className="portfolio-in">
+        {portfolioDatas.map((portfolioList: any, portfolioListIdx: number) => {
           return (
-            who === portfolioIdx &&
-            portfolio.map((data: any, idx: number) => {
-              console.log(data);
+            who === portfolioListIdx &&
+            portfolioList.map((portfolio: any, portfolioIdx: number) => {
               return (
-                <div key={portfolioIdx} className="portfolio-box">
-                  {/* <div className="left-box">
-                    <img className="left-img" src={portfolio.img} />
-                  </div> */}
-                  {/* <div className="right-box">
-                    <div key={portfolioIdx}>
-                      <div className="right-text">name: {portfolio.nickname}</div>
-                      <div className="right-text">
-                        major: <span>{portfolio.major}</span>
-                      </div>
-                      <div className="right-text">
-                        now: <span>{portfolio.now}</span>
-                      </div>
-                      <div className="right-text">
-                        email: <span>{portfolio.email}</span>
-                      </div>
-                      <div className="right-text">
-                        github:&nbsp;
-                        <a href="https://github.com/choiyeju" target="_blank">
-                          {portfolio.github}
-                        </a>
-                      </div>
-                      <div className="right-text">
-                        blog:&nbsp;
-                        <a href="https://velog.io/@cdpwn" target="_blank">
-                          {portfolio.blog}
-                        </a>
-                      </div>
-                    </div>
-                  </div> */}
+                <div
+                  key={portfolioIdx}
+                  className={
+                    "portfolio-box " +
+                    (focus === portfolioIdx
+                      ? "focus-shadow "
+                      : Math.abs(focus - portfolioIdx) < 3 && "normal-shadow ")
+                  }
+                  style={{
+                    opacity: Math.abs(focus - portfolioIdx) > 2 ? 0 : 1,
+                    left: `calc(50% - ${
+                      Math.abs(focus - portfolioIdx) === 2
+                        ? (202 * (focus - portfolioIdx)) / 2
+                        : Math.abs(focus - portfolioIdx) === 1
+                        ? 132 * (focus - portfolioIdx)
+                        : 0
+                    }px)`,
+                    zIndex: 100 - Math.abs(focus - portfolioIdx),
+                  }}
+                >
+                  <div></div>
                 </div>
               );
             })

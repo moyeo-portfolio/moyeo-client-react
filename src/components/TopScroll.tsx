@@ -5,16 +5,15 @@ import "styles/TopScroll.scss";
 interface Props {}
 
 export default function TopScroll({ who, setWho }: any): JSX.Element {
-  const [startMove, setStartMove] = useState<number>(0);
-  const [scroll, setScroll] = useState<number>(150 + who * 50); // 하나당 150
+  const [scroll, setScroll] = useState<number>(0); // 하나당 150
 
   const handleLeft = () => {
-    setWho((scroll - 100) / 50);
-    setScroll(scroll + 50);
+    setScroll(scroll + 150);
+    setWho(Math.abs((scroll + 150) / 150));
   };
   const handleRight = () => {
-    setWho((scroll - 100) / 50);
-    setScroll(scroll - 50);
+    setScroll(scroll - 150);
+    setWho(Math.abs((scroll - 150) / 150));
   };
 
   return (
@@ -36,7 +35,8 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
           <div
             style={{
               display: "flex",
-              transform: `translateX(${scroll}%)`,
+              marginLeft: "450px",
+              transform: `translateX(${scroll}px)`,
               transition: "0.5s ease",
             }}
           >
@@ -52,13 +52,13 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
 
         <div className="gradation-box">
           <div className="gradation gradation-left" />
-          {scroll !== 150 && (
+          {scroll !== 0 && (
             <div className="arrow-left-box">
               <div className="arrow-left" onClick={handleLeft} />
             </div>
           )}
           <div className="main-developer" />
-          {scroll !== 150 - (developerDatas.length - 1) * 50 && (
+          {scroll !== (developerDatas.length - 1) * -150 && (
             <div className="arrow-right-box">
               <div className="arrow-right" onClick={handleRight} />
             </div>

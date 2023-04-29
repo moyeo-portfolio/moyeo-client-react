@@ -44,19 +44,23 @@ a {
   color: $Gray-09;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
 // ::-webkit-scrollbar {
-//   width: 0px;
-//   height: 0px;
+//   width: 10px;
+//     height: 16px;
 // }
-// body::-webkit-scrollbar {
-//   width: 6px;
-//   height: 16px;
+// ::-webkit-scrollbar-thumb {
+//   background-color: #fff;
+//   border-radius: 10px;
+//   background-clip: padding-box;
 // }
-// body::-webkit-scrollbar-thumb {
+// ::-webkit-scrollbar-thumb:hover {
 //   background-color: #a5a5a5;
 //   border-radius: 10px;
 //   background-clip: padding-box;
-//   // border: 3px solid transparent;
 // }
 
 .app-main {
@@ -88,4 +92,11 @@ a {
 
 .flex {
   display: flex;
+}
+
+.focus-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7), 0px 4px 250px $white;
+}
+.normal-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
