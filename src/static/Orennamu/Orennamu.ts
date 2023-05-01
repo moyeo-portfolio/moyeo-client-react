@@ -19,4 +19,10 @@ export const OrennamuSkillStack = [
   {
     skillstack: "Hi",
   },
+  {
+    skillstack: "Hi",
+  },
+  {
+    skillstack: "Hi",
+  },
 ];

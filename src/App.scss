@@ -48,15 +48,15 @@ a {
   width: 0px;
   height: 0px;
 }
-// ::-webkit-scrollbar {
-//   width: 10px;
-//     height: 16px;
-// }
-// ::-webkit-scrollbar-thumb {
-//   background-color: #fff;
-//   border-radius: 10px;
-//   background-clip: padding-box;
-// }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 16px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #a5a5a5;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
 // ::-webkit-scrollbar-thumb:hover {
 //   background-color: #a5a5a5;
 //   border-radius: 10px;

@@ -1,19 +1,40 @@
 @import "styles/reset.scss";
 
-.stillstack-in {
+.skillstack {
+  max-width: 1210px;
+  min-width: 1210px;
+
+  position: relative;
+}
+
+.skillstack-cover {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(to right, transparent 1200px, $white 10px);
+  transition: all 0.5s;
+}
+.skillstack-cover:hover {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.skillstack-in {
   min-width: 1180px;
   padding: 0 10px;
   padding-top: 50px;
+  overflow-y: scroll;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 50px;
-
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
-.stillstack-box {
+.skillstack-box {
   max-width: 360px;
   min-width: 360px;
   height: 480px;

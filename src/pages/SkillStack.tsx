@@ -8,9 +8,31 @@ export default function SkillStack({
   sFocus,
   setSFocus,
 }: any): JSX.Element {
+  const [num, setNum] = useState<number>(0);
+  const reload = () => {
+    setNum(num + 1);
+  };
+  const [zIndex, setZIndex] = useState<number>(999);
+
   return (
-    <div className="center-body">
-      <div className="stillstack-in">
+    <div className="center-body skillstack">
+      <div
+        className="skillstack-in"
+        onMouseOver={() => {
+          setZIndex(-1);
+          reload();
+        }}
+        onMouseLeave={() => {
+          setZIndex(999);
+          reload();
+        }}
+      >
+        <div
+          className="skillstack-cover"
+          style={{
+            zIndex: zIndex,
+          }}
+        />
         {skillstackDatas.map(
           (skillstackList: any, skillstackListIdx: number) => {
             return (
@@ -20,14 +42,15 @@ export default function SkillStack({
                   <div
                     key={skillstackIdx}
                     className={
-                      "stillstack-box " +
+                      "skillstack-box " +
                       (skillstackIdx === sFocus
                         ? "focus-shadow "
                         : "normal-shadow ")
                     }
-                  >
-                    <div></div>
-                  </div>
+                    onClick={() => {
+                      setSFocus(skillstackIdx);
+                    }}
+                  ></div>
                 );
               })
             );

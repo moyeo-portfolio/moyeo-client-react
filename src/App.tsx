@@ -16,11 +16,11 @@ import TopScroll from "components/TopScroll";
 
 function App(): JSX.Element {
   // const location = useLocation();
-  const [menu, setMenu] = useState(0);
-  const [who, setWho] = useState(0);
+  const [menu, setMenu] = useState<number>(0);
+  const [who, setWho] = useState<number>(0);
 
-  const [pFocus, setPFocus] = useState<any>(0);
-  const [sFocus, setSFocus] = useState<any>(0);
+  const [pFocus, setPFocus] = useState<number>(0);
+  const [sFocus, setSFocus] = useState<number>(0);
 
   useEffect(() => {
     const url = window.location.href.split("/");
@@ -55,7 +55,7 @@ function App(): JSX.Element {
           <Route
             path={SkillStackUrl}
             element={
-              <SkillStack who={who} pFocus={sFocus} setPFocus={setSFocus} />
+              <SkillStack who={who} sFocus={sFocus} setSFocus={setSFocus} />
             }
           />
           <Route path={"/*"} element={<NotFound />} />
