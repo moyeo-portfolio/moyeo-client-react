@@ -15,48 +15,51 @@ export default function SkillStack({
   const [zIndex, setZIndex] = useState<number>(999);
 
   return (
-    <div className="center-body skillstack">
-      <div
-        className="skillstack-in"
-        onMouseOver={() => {
-          setZIndex(-1);
-          reload();
-        }}
-        onMouseLeave={() => {
-          setZIndex(999);
-          reload();
-        }}
-      >
+    <>
+      <div className="padding-top" />
+      <div className="center-body skillstack">
         <div
-          className="skillstack-cover"
-          style={{
-            zIndex: zIndex,
+          className="skillstack-in"
+          onMouseOver={() => {
+            setZIndex(-1);
+            reload();
           }}
-        />
-        {skillstackDatas.map(
-          (skillstackList: any, skillstackListIdx: number) => {
-            return (
-              who === skillstackListIdx &&
-              skillstackList.map((skillstack: any, skillstackIdx: number) => {
-                return (
-                  <div
-                    key={skillstackIdx}
-                    className={
-                      "skillstack-box " +
-                      (skillstackIdx === sFocus
-                        ? "focus-shadow "
-                        : "normal-shadow ")
-                    }
-                    onClick={() => {
-                      setSFocus(skillstackIdx);
-                    }}
-                  ></div>
-                );
-              })
-            );
-          }
-        )}
+          onMouseLeave={() => {
+            setZIndex(999);
+            reload();
+          }}
+        >
+          <div
+            className="skillstack-cover"
+            style={{
+              zIndex: zIndex,
+            }}
+          />
+          {skillstackDatas.map(
+            (skillstackList: any, skillstackListIdx: number) => {
+              return (
+                who === skillstackListIdx &&
+                skillstackList.map((skillstack: any, skillstackIdx: number) => {
+                  return (
+                    <div
+                      key={skillstackIdx}
+                      className={
+                        "skillstack-box " +
+                        (skillstackIdx === sFocus
+                          ? "focus-shadow "
+                          : "normal-shadow ")
+                      }
+                      onClick={() => {
+                        setSFocus(skillstackIdx);
+                      }}
+                    ></div>
+                  );
+                })
+              );
+            }
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

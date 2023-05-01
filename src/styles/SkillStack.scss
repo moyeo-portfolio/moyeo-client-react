@@ -5,42 +5,42 @@
   min-width: 1210px;
 
   position: relative;
-}
 
-.skillstack-cover {
-  width: 100%;
-  height: 100%;
+  &-cover {
+    width: 100%;
+    height: 100%;
 
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  background: linear-gradient(to right, transparent 1200px, $white 10px);
-  transition: all 0.5s;
-}
-.skillstack-cover:hover {
-  opacity: 0;
-  transition: all 0.5s;
-}
+    background: linear-gradient(to right, transparent 1200px, $white 10px);
+    transition: all 0.5s;
+  }
+  &-cover:hover {
+    opacity: 0;
+    transition: all 0.5s;
+  }
 
-.skillstack-in {
-  min-width: 1180px;
-  padding: 0 10px;
-  padding-top: 50px;
-  overflow-y: scroll;
+  &-in {
+    min-width: 1180px;
+    padding: 0 10px;
+    padding-top: 50px;
+    overflow-y: scroll;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 50px;
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+  }
 
-.skillstack-box {
-  max-width: 360px;
-  min-width: 360px;
-  height: 480px;
-  margin-bottom: 50px;
+  &-box {
+    max-width: 360px;
+    min-width: 360px;
+    height: 480px;
+    margin-bottom: 50px;
 
-  //   display: flex;
-  border-radius: 10px;
-  background-color: $white;
+    //   display: flex;
+    border-radius: 10px;
+    background-color: $white;
+  }
 }

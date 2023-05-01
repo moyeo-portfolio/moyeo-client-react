@@ -19,6 +19,7 @@ function App(): JSX.Element {
   const [menu, setMenu] = useState<number>(0);
   const [who, setWho] = useState<number>(0);
 
+  const [pClick, setPClick] = useState<boolean>(false);
   const [pFocus, setPFocus] = useState<number>(0);
   const [sFocus, setSFocus] = useState<number>(0);
 
@@ -39,17 +40,30 @@ function App(): JSX.Element {
           setPFocus={setPFocus}
           setSFocus={setSFocus}
         />
-        <div className="padding-top" />
+
         <Routes>
           <Route
             path={HomeUrl}
-            element={<Home setMenu={setMenu} setWho={setWho} />}
+            element={
+              <Home
+                setMenu={setMenu}
+                setWho={setWho}
+                setPFocus={setPFocus}
+                setSFocus={setPFocus}
+              />
+            }
           />
           <Route path={DeveloperUrl} element={<Developer who={who} />} />
           <Route
             path={PortfolioUrl}
             element={
-              <Portfolio who={who} pFocus={pFocus} setPFocus={setPFocus} />
+              <Portfolio
+                who={who}
+                pClick={pClick}
+                setPClick={setPClick}
+                pFocus={pFocus}
+                setPFocus={setPFocus}
+              />
             }
           />
           <Route
