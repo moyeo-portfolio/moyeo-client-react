@@ -40,8 +40,8 @@
   }
 }
 
-.arrow-right,
-.arrow-left {
+.topscroll-arrow-right,
+.topscroll-arrow-left {
   &-box {
     width: 50px;
     height: 100%;
@@ -59,7 +59,7 @@
   border-radius: 30px;
   background-color: $Gray-01;
 }
-.arrow-right {
+.topscroll-arrow-right {
   &-box {
     margin-left: calc(42% + 150px);
   }

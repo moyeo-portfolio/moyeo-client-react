@@ -3,8 +3,11 @@ import "styles/SkillStack.scss";
 
 import { skillstackDatas } from "static/Datas";
 
-export default function SkillStack({ who }: any): JSX.Element {
-  const [focus, setFocus] = useState<number>(0);
+export default function SkillStack({
+  who,
+  sFocus,
+  setSFocus,
+}: any): JSX.Element {
   return (
     <div className="center-body">
       <div className="stillstack-in">
@@ -18,7 +21,7 @@ export default function SkillStack({ who }: any): JSX.Element {
                     key={skillstackIdx}
                     className={
                       "stillstack-box " +
-                      (skillstackIdx === focus
+                      (skillstackIdx === sFocus
                         ? "focus-shadow "
                         : "normal-shadow ")
                     }

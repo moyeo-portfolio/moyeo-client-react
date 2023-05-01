@@ -1,25 +1,47 @@
 @import "styles/reset.scss";
 
-.portfolio-in {
-  min-width: 1200px;
-  min-height: 700px;
-  position: relative;
-}
+.portfolio {
+  &-in {
+    min-width: 1200px;
+    min-height: 700px;
+    position: relative;
+  }
 
-.portfolio-box {
-  max-width: 600px;
-  min-width: 600px;
-  height: 700px;
+  &-box {
+    max-width: 600px;
+    min-width: 600px;
+    height: 700px;
 
-  // margin: auto;
-  // display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid $white;
+    background-color: $white;
+  }
 
-  border-radius: 10px;
-  border: 1px solid $white;
-  background-color: $white;
+  &-arrow-right,
+  &-arrow-left {
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    background-color: $white;
+  }
+
+  &-arrow-right {
+    left: calc(50% + 334px);
+  }
+  &-arrow-left {
+    left: calc(50% - 334px);
+  }
 }

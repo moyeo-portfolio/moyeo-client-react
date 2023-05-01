@@ -3,9 +3,11 @@ import "styles/Portfolio.scss";
 
 import { portfolioDatas } from "static/Datas";
 
-export default function Portfolio({ who }: any): JSX.Element {
-  const [focus, setFocus] = useState<any>(0);
-
+export default function Portfolio({
+  who,
+  pFocus,
+  setPFocus,
+}: any): JSX.Element {
   return (
     <div className="center-body">
       <div className="portfolio-in">
@@ -18,28 +20,43 @@ export default function Portfolio({ who }: any): JSX.Element {
                   key={portfolioIdx}
                   className={
                     "portfolio-box " +
-                    (focus === portfolioIdx
+                    (pFocus === portfolioIdx
                       ? "focus-shadow "
-                      : Math.abs(focus - portfolioIdx) < 3 && "normal-shadow ")
+                      : Math.abs(pFocus - portfolioIdx) < 3 && "normal-shadow ")
                   }
                   style={{
-                    opacity: Math.abs(focus - portfolioIdx) > 2 ? 0 : 1,
+                    opacity: Math.abs(pFocus - portfolioIdx) > 2 ? 0 : 1,
                     left: `calc(50% - ${
-                      Math.abs(focus - portfolioIdx) === 2
-                        ? (202 * (focus - portfolioIdx)) / 2
-                        : Math.abs(focus - portfolioIdx) === 1
-                        ? 132 * (focus - portfolioIdx)
+                      Math.abs(pFocus - portfolioIdx) === 2
+                        ? (202 * (pFocus - portfolioIdx)) / 2
+                        : Math.abs(pFocus - portfolioIdx) === 1
+                        ? 132 * (pFocus - portfolioIdx)
                         : 0
                     }px)`,
-                    zIndex: 100 - Math.abs(focus - portfolioIdx),
+                    zIndex: 100 - Math.abs(pFocus - portfolioIdx),
+                    transition: "0.5s ease",
                   }}
-                >
-                  <div></div>
-                </div>
+                ></div>
               );
             })
           );
         })}
+        {pFocus !== 0 && (
+          <div
+            className="portfolio-arrow-left"
+            onClick={() => {
+              setPFocus(pFocus - 1);
+            }}
+          />
+        )}
+        {pFocus !== portfolioDatas[who].length - 1 && (
+          <div
+            className="portfolio-arrow-right"
+            onClick={() => {
+              setPFocus(pFocus + 1);
+            }}
+          />
+        )}
       </div>
     </div>
   );

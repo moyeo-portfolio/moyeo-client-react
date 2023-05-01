@@ -19,6 +19,9 @@ function App(): JSX.Element {
   const [menu, setMenu] = useState(0);
   const [who, setWho] = useState(0);
 
+  const [pFocus, setPFocus] = useState<any>(0);
+  const [sFocus, setSFocus] = useState<any>(0);
+
   useEffect(() => {
     const url = window.location.href.split("/");
     const pathname = url[url.length - 1];
@@ -31,7 +34,11 @@ function App(): JSX.Element {
     <BrowserRouter>
       <div className="app-main">
         <Headers menu={menu} setMenu={setMenu} />
-        <TopScroll who={who} setWho={setWho} />
+        <TopScroll
+          setWho={setWho}
+          setPFocus={setPFocus}
+          setSFocus={setSFocus}
+        />
         <div className="padding-top" />
         <Routes>
           <Route
@@ -39,8 +46,18 @@ function App(): JSX.Element {
             element={<Home setMenu={setMenu} setWho={setWho} />}
           />
           <Route path={DeveloperUrl} element={<Developer who={who} />} />
-          <Route path={PortfolioUrl} element={<Portfolio who={who} />} />
-          <Route path={SkillStackUrl} element={<SkillStack who={who} />} />
+          <Route
+            path={PortfolioUrl}
+            element={
+              <Portfolio who={who} pFocus={pFocus} setPFocus={setPFocus} />
+            }
+          />
+          <Route
+            path={SkillStackUrl}
+            element={
+              <SkillStack who={who} pFocus={sFocus} setPFocus={setSFocus} />
+            }
+          />
           <Route path={"/*"} element={<NotFound />} />
         </Routes>
         {/* <Footers /> */}

@@ -4,16 +4,24 @@ import "styles/TopScroll.scss";
 
 interface Props {}
 
-export default function TopScroll({ who, setWho }: any): JSX.Element {
+export default function TopScroll({
+  setWho,
+  setPFocus,
+  setSFocus,
+}: any): JSX.Element {
   const [scroll, setScroll] = useState<number>(0); // 하나당 150
 
   const handleLeft = () => {
     setScroll(scroll + 150);
     setWho(Math.abs((scroll + 150) / 150));
+    setPFocus(0);
+    setSFocus(0);
   };
   const handleRight = () => {
     setScroll(scroll - 150);
     setWho(Math.abs((scroll - 150) / 150));
+    setPFocus(0);
+    setSFocus(0);
   };
 
   return (
@@ -53,14 +61,14 @@ export default function TopScroll({ who, setWho }: any): JSX.Element {
         <div className="gradation-box">
           <div className="gradation gradation-left" />
           {scroll !== 0 && (
-            <div className="arrow-left-box">
-              <div className="arrow-left" onClick={handleLeft} />
+            <div className="topscroll-arrow-left-box">
+              <div className="topscroll-arrow-left" onClick={handleLeft} />
             </div>
           )}
           <div className="main-developer" />
           {scroll !== (developerDatas.length - 1) * -150 && (
-            <div className="arrow-right-box">
-              <div className="arrow-right" onClick={handleRight} />
+            <div className="topscroll-arrow-right-box">
+              <div className="topscroll-arrow-right" onClick={handleRight} />
             </div>
           )}
           <div className="gradation gradation-right" />
