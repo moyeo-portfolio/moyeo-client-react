@@ -5,6 +5,6 @@ import {
   OrennamuSkillStack,
 } from "static/Orennamu/Orennamu";
 
-export const developerDatas = [EzDeveloper, OrennamuDeveloper];
-export const portfolioDatas = [EzPortfolio, OrennamuPortfolio];
-export const skillstackDatas = [EzSkillStack, OrennamuSkillStack];
+export const developerDatas = [EzDeveloper];
+export const portfolioDatas = [EzPortfolio];
+export const skillstackDatas = [EzSkillStack];

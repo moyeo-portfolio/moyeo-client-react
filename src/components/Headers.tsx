@@ -5,7 +5,12 @@ import logo from "assets/logo.png";
 
 import { DeveloperUrl, PortfolioUrl, SkillStackUrl } from "Router";
 
-export default function Headers({ menu, setMenu }: any): JSX.Element {
+export default function Headers({
+  menu,
+  setMenu,
+  setPFocus,
+  setSFocus,
+}: any): JSX.Element {
   const navigate = useNavigate();
 
   return (
@@ -35,6 +40,7 @@ export default function Headers({ menu, setMenu }: any): JSX.Element {
               to={PortfolioUrl}
               onClick={() => {
                 setMenu(1);
+                setPFocus(0);
               }}
             >
               Portfolio
@@ -45,6 +51,7 @@ export default function Headers({ menu, setMenu }: any): JSX.Element {
               to={SkillStackUrl}
               onClick={() => {
                 setMenu(2);
+                setSFocus(0);
               }}
             >
               Skill&Stack

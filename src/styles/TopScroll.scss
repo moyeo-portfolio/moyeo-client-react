@@ -8,18 +8,61 @@
   top: 100px;
   background-color: $Gray-08;
   z-index: 900;
+
+  &-in {
+    min-width: 1050px;
+    height: 80px;
+    margin: 0 75px;
+    display: flex;
+    background-color: $Gray-06;
+  }
+
+  &-arrow-right,
+  &-arrow-left {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+
+    text-align: center;
+    line-height: 35px;
+
+    border-radius: 30px;
+    background-color: $Gray-01;
+
+    &-box {
+      width: 50px;
+      height: 100%;
+      margin-left: 41.3%;
+      display: flex;
+      position: absolute;
+      // background-color: red;
+    }
+  }
+
+  &-arrow-right {
+    &-box {
+      margin-left: calc(42% + 150px);
+    }
+  }
 }
 
-.gradation-box {
-  width: 1200px;
-  height: 80px;
-  display: flex;
-
-  position: absolute;
+.main-developer {
+  min-width: 150px;
 }
+
 .gradation {
   width: 100%;
   height: 80px;
+
+  &-box {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+
+    position: absolute;
+  }
+
   &-left {
     background: linear-gradient(
       to right,
@@ -39,50 +82,16 @@
   }
 }
 
-.topscroll-arrow-right,
-.topscroll-arrow-left {
-  &-box {
-    width: 50px;
-    height: 100%;
-    margin-left: 41.3%;
-    display: flex;
-    position: absolute;
-    // background-color: red;
-  }
-
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  margin: auto;
-
-  border-radius: 30px;
-  background-color: $Gray-01;
-}
-.topscroll-arrow-right {
-  &-box {
-    margin-left: calc(42% + 150px);
-  }
-}
-.main-developer {
-  min-width: 150px;
-}
-
-.topscroll-in {
-  min-width: 1050px;
-  height: 80px;
-  margin: 0 75px;
-  display: flex;
-  background-color: $Gray-06;
-}
-.nickname-box-in {
-  min-width: 150px;
-  height: 80px;
-  display: flex;
-  text-align: center;
-}
 .nickname {
   margin: auto;
   color: $Gray-01;
   font-size: 20px;
   -webkit-text-stroke: 0.2px $Gray-06;
+
+  &-box-in {
+    min-width: 150px;
+    height: 80px;
+    display: flex;
+    text-align: center;
+  }
 }

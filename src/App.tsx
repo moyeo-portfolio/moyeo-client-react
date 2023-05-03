@@ -34,7 +34,12 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <div className="app-main">
-        <Headers menu={menu} setMenu={setMenu} />
+        <Headers
+          menu={menu}
+          setMenu={setMenu}
+          setPFocus={setPFocus}
+          setSFocus={setSFocus}
+        />
         <TopScroll
           setWho={setWho}
           setPFocus={setPFocus}

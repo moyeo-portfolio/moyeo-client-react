@@ -3,6 +3,14 @@ import "styles/Portfolio.scss";
 
 import { portfolioDatas } from "static/Datas";
 
+import { ReactComponent as ArrowLeft } from "assets/arrow-left-24.svg";
+import { ReactComponent as ArrowRight } from "assets/arrow-right-24.svg";
+
+import { ReactComponent as IOS } from "assets/ios-32.svg";
+import { ReactComponent as Android } from "assets/android-32.svg";
+import { ReactComponent as Internet } from "assets/internet-32.svg";
+import { ReactComponent as Github } from "assets/github-32.svg";
+
 export default function Portfolio({
   who,
   pClick,
@@ -58,7 +66,7 @@ export default function Portfolio({
                           ? "0px"
                           : `${180 + (resize - 880) / 2}px`
                         : `${180 + (resize - 880) / 2}px`,
-                    opacity: Math.abs(pFocus - portfolioIdx) > 2 ? 0 : 1,
+                    // opacity: Math.abs(pFocus - portfolioIdx) > 2 ? 0 : 1,
 
                     left: `calc(50% - ${
                       Math.abs(pFocus - portfolioIdx) === 2
@@ -67,6 +75,12 @@ export default function Portfolio({
                         ? 132 * (pFocus - portfolioIdx)
                         : 0
                     }px)`,
+                    opacity:
+                      Math.abs(pFocus - portfolioIdx) === 2
+                        ? 0.7
+                        : Math.abs(pFocus - portfolioIdx) === 1
+                        ? 1
+                        : 1,
 
                     zIndex:
                       click && pFocus === portfolioIdx
@@ -87,7 +101,42 @@ export default function Portfolio({
                     setClick(true);
                     setPFocus(portfolioIdx);
                   }}
-                ></div>
+                >
+                  <div className="portfolio-box-in">
+                    <div>
+                      {portfolio.project} {portfolio.organization}
+                    </div>
+                    <div>{portfolio.date}</div>
+                    <div>{portfolio.activity}</div>
+                    {portfolio.skills.map((skill: string, skillIdx: number) => {
+                      return <div key={skillIdx}>{skill}</div>;
+                    })}
+                    {portfolio.links.length === 1 ? (
+                      <div>
+                        <Internet />
+                      </div>
+                    ) : (
+                      <>
+                        <div>
+                          <IOS />
+                        </div>
+                        <div>
+                          <Android />
+                        </div>
+                      </>
+                    )}
+                    <div>
+                      <Github />
+                    </div>
+                    {/* {portfolio.images.map((image: any, imageIdx: number) => {
+                      return (
+                        <div>
+                          <img src={image} />
+                        </div>
+                      );
+                    })} */}
+                  </div>
+                </div>
               );
             })
           );
@@ -107,7 +156,9 @@ export default function Portfolio({
             onClick={() => {
               setPFocus(pFocus - 1);
             }}
-          />
+          >
+            <ArrowLeft />
+          </div>
         )}
         {pFocus !== portfolioDatas[who].length - 1 && (
           <div
@@ -124,7 +175,9 @@ export default function Portfolio({
             onClick={() => {
               setPFocus(pFocus + 1);
             }}
-          />
+          >
+            <ArrowRight />
+          </div>
         )}
       </div>
       {click && (

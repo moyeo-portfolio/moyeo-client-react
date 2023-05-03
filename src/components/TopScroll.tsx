@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { developerDatas } from "static/Datas";
 import "styles/TopScroll.scss";
 
-interface Props {}
+import { ReactComponent as ArrowLeft } from "assets/arrow-left-24.svg";
+import { ReactComponent as ArrowRight } from "assets/arrow-right-24.svg";
 
 export default function TopScroll({
   setWho,
@@ -62,13 +63,17 @@ export default function TopScroll({
           <div className="gradation gradation-left" />
           {scroll !== 0 && (
             <div className="topscroll-arrow-left-box">
-              <div className="topscroll-arrow-left" onClick={handleLeft} />
+              <div className="topscroll-arrow-left" onClick={handleLeft}>
+                <ArrowLeft width={16} height={16} />
+              </div>
             </div>
           )}
           <div className="main-developer" />
           {scroll !== (developerDatas.length - 1) * -150 && (
             <div className="topscroll-arrow-right-box">
-              <div className="topscroll-arrow-right" onClick={handleRight} />
+              <div className="topscroll-arrow-right" onClick={handleRight}>
+                <ArrowRight width={16} height={16} />
+              </div>
             </div>
           )}
           <div className="gradation gradation-right" />

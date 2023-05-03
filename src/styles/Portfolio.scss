@@ -16,9 +16,17 @@
     // top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
+    overflow: hidden;
 
     border: 1px solid $white;
     background-color: $white;
+  }
+  &-box-in {
+    max-width: 538px;
+    min-width: 538px;
+    height: 638px; // 638px
+    margin: 32px;
+    overflow-y: scroll;
   }
 
   &-arrow-right,
@@ -31,6 +39,9 @@
     // top: 50%;
     transform: translate(-50%, 0);
     z-index: 999;
+
+    text-align: center;
+    line-height: 52px;
 
     border-radius: 50%;
     background-color: $white;
