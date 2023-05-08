@@ -46,7 +46,7 @@ export default function Headers({
               Portfolio
             </Link>
           </div>
-          <div className={"header-menu-in " + (menu === 2 && "header-border")}>
+          {/* <div className={"header-menu-in " + (menu === 2 && "header-border")}>
             <Link
               to={SkillStackUrl}
               onClick={() => {
@@ -56,7 +56,7 @@ export default function Headers({
             >
               Skill&Stack
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -6,10 +6,10 @@ import { portfolioDatas } from "static/Datas";
 import { ReactComponent as ArrowLeft } from "assets/arrow-left-24.svg";
 import { ReactComponent as ArrowRight } from "assets/arrow-right-24.svg";
 
-import { ReactComponent as IOS } from "assets/ios-32.svg";
-import { ReactComponent as Android } from "assets/android-32.svg";
-import { ReactComponent as Internet } from "assets/internet-32.svg";
-import { ReactComponent as Github } from "assets/github-32.svg";
+import IOS from "assets/ios-32.png";
+import Android from "assets/android-32.png";
+import Internet from "assets/internet-32.png";
+import Github from "assets/github-32.png";
 
 export default function Portfolio({
   who,
@@ -46,6 +46,7 @@ export default function Portfolio({
           return (
             who === portfolioListIdx &&
             portfolioList.map((portfolio: any, portfolioIdx: number) => {
+              const len = portfolio.links.length;
               return (
                 <div
                   key={portfolioIdx}
@@ -108,33 +109,58 @@ export default function Portfolio({
                     </div>
                     <div>{portfolio.date}</div>
                     <div>{portfolio.activity}</div>
+
                     {portfolio.skills.map((skill: string, skillIdx: number) => {
                       return <div key={skillIdx}>{skill}</div>;
                     })}
-                    {portfolio.links.length === 1 ? (
-                      <div>
-                        <Internet />
-                      </div>
-                    ) : (
-                      <>
-                        <div>
-                          <IOS />
-                        </div>
-                        <div>
-                          <Android />
-                        </div>
-                      </>
-                    )}
-                    <div>
-                      <Github />
-                    </div>
-                    {/* {portfolio.images.map((image: any, imageIdx: number) => {
+
+                    {portfolio.links.map((link: any, linkIdx: number) => {
                       return (
-                        <div>
-                          <img src={image} />
+                        <div key={linkIdx}>
+                          <img
+                            src={
+                              len === 1
+                                ? Internet
+                                : linkIdx === 0
+                                ? IOS
+                                : Android
+                            }
+                          />
+                          <span>{link}</span>
                         </div>
                       );
-                    })} */}
+                    })}
+                    <div>
+                      <img src={Github} />
+                      <span>{portfolio.githubLink}</span>
+                    </div>
+
+                    <div style={{ width: "298px" }}>
+                      {len === 1 && (
+                        <div
+                          className={"portfolio-img portfolio-internet-fstImg"}
+                        >
+                          <img src={portfolio.images[0]} />
+                        </div>
+                      )}
+                      <div className="portfolio-img-box">
+                        {portfolio.images.map((img: any, imgIdx: number) => {
+                          return len === 1 && imgIdx === 0 ? (
+                            <></>
+                          ) : (
+                            <div
+                              key={imgIdx}
+                              className={
+                                "portfolio-img portfolio" +
+                                (len === 1 ? "-internet-img" : "-app-img")
+                              }
+                            >
+                              <img src={img} />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
