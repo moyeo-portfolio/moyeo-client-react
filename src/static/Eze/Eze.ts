@@ -61,10 +61,9 @@ export const EzePortfolio = [
     links: ["http://moyeo.org/kcook"],
     githubLink: "https://github.com/kcook-cake/K.Cook-Client",
     images: [
-      require("assets/Eze/Eze_eatery_img1.png"),
-      require("assets/Eze/Eze_eatery_img2.jpg"),
-      require("assets/Eze/Eze_eatery_img3.png"),
-      require("assets/Eze/Eze_eatery_img4.jpg"),
+      require("assets/Eze/Eze_kcook_gif.gif"),
+      require("assets/Eze/Eze_kcook_img1.png"),
+      require("assets/Eze/Eze_kcook_img2.png"),
     ],
   },
   {
@@ -75,10 +74,7 @@ export const EzePortfolio = [
     skills: ["React", "TypeScript"],
     links: ["http://moyeo.org/pickit"],
     githubLink: "https://github.com/Pick-IT-SSU/frontend",
-    images: [
-      require("assets/Eze/Eze_eatery_img1.png"),
-      // require("assets/Ez/Ez_eatery_img2.png"),
-    ],
+    images: [require("assets/Eze/Eze_pickit_gif.gif")],
   },
   {
     project: "사계절 추천 노래",
@@ -88,10 +84,7 @@ export const EzePortfolio = [
     skills: ["Html5", "CSS3", "JavaScript", "jQuery"],
     links: ["http://moyeo.org/season"],
     githubLink: "https://github.com/choiyeju/5_finally",
-    images: [
-      require("assets/Eze/Eze_eatery_img1.png"),
-      // require("assets/Ez/Ez_eatery_img2.png"),
-    ],
+    images: [require("assets/Eze/Eze_season_gif.gif")],
   },
 ];
 
