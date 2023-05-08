@@ -6,7 +6,7 @@
 
   position: fixed;
   top: 100px;
-  background-color: $Gray-08;
+  background-color: $Gray-09;
   z-index: 900;
 
   &-in {
@@ -14,7 +14,7 @@
     height: 80px;
     margin: 0 75px;
     display: flex;
-    background-color: $Gray-06;
+    background-color: $Gray-07;
   }
 
   &-arrow-right,
@@ -66,8 +66,8 @@
   &-left {
     background: linear-gradient(
       to right,
+      $Gray-09,
       $Gray-08,
-      $Gray-07,
       rgba(85, 85, 85, 0.6)
     );
   }
@@ -75,8 +75,8 @@
   &-right {
     background: linear-gradient(
       to left,
+      $Gray-09,
       $Gray-08,
-      $Gray-07,
       rgba(85, 85, 85, 0.6)
     );
   }
@@ -86,7 +86,7 @@
   margin: auto;
   color: $Gray-01;
   font-size: 20px;
-  -webkit-text-stroke: 0.2px $Gray-06;
+  -webkit-text-stroke: 0.2px $Gray-07;
 
   &-box-in {
     min-width: 150px;

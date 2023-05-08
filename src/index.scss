@@ -22,8 +22,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 
-  color: $Gray-09;
+  color: $Gray-10;
   font-family: "CookieRunRegular";
+
+  font-size: 18px;
+  font-weight: 400;
+  -webkit-text-stroke: 0.2px $white;
   /* -webkit-text-stroke: 0.6px #fff; */
 }
 

@@ -103,20 +103,47 @@ export default function Portfolio({
                     setPFocus(portfolioIdx);
                   }}
                 >
-                  <div className="portfolio-box-in">
-                    <div>
-                      {portfolio.project} {portfolio.organization}
+                  <div
+                    className="portfolio-box-in"
+                    style={
+                      pClick
+                        ? {
+                            height: `calc(${resize}px - 64px)`,
+                            overflowY: "scroll",
+                          }
+                        : {}
+                    }
+                  >
+                    <div className="portfolio-project">
+                      <span>{portfolio.project}</span> {portfolio.organization}
                     </div>
-                    <div>{portfolio.date}</div>
-                    <div>{portfolio.activity}</div>
+                    <div className="portfolio-dateActivity">
+                      {portfolio.date}
+                    </div>
+                    <div className="portfolio-dateActivity">
+                      {portfolio.activity}
+                    </div>
 
                     {portfolio.skills.map((skill: string, skillIdx: number) => {
-                      return <div key={skillIdx}>{skill}</div>;
+                      return (
+                        <div key={skillIdx} className="portfolio-skill">
+                          {skill}
+                        </div>
+                      );
                     })}
 
                     {portfolio.links.map((link: any, linkIdx: number) => {
                       return (
-                        <div key={linkIdx}>
+                        <a
+                          key={linkIdx}
+                          href={link}
+                          className="portfolio-link"
+                          style={{
+                            pointerEvents: pClick ? "auto" : "none",
+                            cursor: pClick ? "pointer" : "auto",
+                          }}
+                          target="_blank"
+                        >
                           <img
                             src={
                               len === 1
@@ -127,13 +154,21 @@ export default function Portfolio({
                             }
                           />
                           <span>{link}</span>
-                        </div>
+                        </a>
                       );
                     })}
-                    <div>
+                    <a
+                      className="portfolio-link"
+                      href={portfolio.githubLink}
+                      style={{
+                        pointerEvents: pClick ? "auto" : "none",
+                        cursor: pClick ? "pointer" : "auto",
+                      }}
+                      target="_blank"
+                    >
                       <img src={Github} />
                       <span>{portfolio.githubLink}</span>
-                    </div>
+                    </a>
 
                     <div style={{ width: "298px" }}>
                       {len === 1 && (

@@ -41,7 +41,7 @@
 
 a {
   text-decoration: none;
-  color: $Gray-09;
+  color: $Gray-10;
 }
 
 ::-webkit-scrollbar {
@@ -49,13 +49,14 @@ a {
   height: 0px;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 10px; // 8px
   height: 16px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #a5a5a5;
+  background-color: $Gray-04;
   border-radius: 10px;
   background-clip: padding-box;
+  border-left: 2px solid transparent;
 }
 // ::-webkit-scrollbar-thumb:hover {
 //   background-color: #a5a5a5;

@@ -17,8 +17,6 @@
     left: 50%;
     transform: translate(-50%, 0);
     overflow: hidden;
-
-    border: 1px solid $white;
     background-color: $white;
   }
   &-box-in {
@@ -54,6 +52,57 @@
   }
   &-arrow-left {
     left: calc(50% - 348px);
+  }
+
+  //
+  &-project {
+    height: 32px;
+    margin-bottom: 12px;
+    span {
+      font-size: 22px;
+      -webkit-text-stroke: 0px;
+    }
+  }
+  &-dateActivity {
+    height: 24px;
+    margin-bottom: 12px;
+  }
+  &-skill {
+    height: 16px;
+    margin-right: 8px;
+    padding: 2px 5px;
+
+    display: inline-block;
+    font-size: 12px;
+
+    border-radius: 16px;
+    background-color: $Gray-04;
+    -webkit-text-stroke: 0.2px $Gray-04;
+  }
+  &-link {
+    height: 40px;
+    margin-top: 12px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $Gray-04;
+    border-radius: 4px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.2px $white;
+
+    img {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+    span {
+      font-size: 12px;
+    }
   }
 
   &-img-box {
