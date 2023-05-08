@@ -22,8 +22,9 @@ export default function Portfolio({
 
   const [resize, setResize] = useState(0);
   const handleResize = () => {
-    if (window.innerHeight < 880) setResize(880);
-    else setResize(window.innerHeight);
+    // if (window.innerHeight < 880) setResize(880);
+    // else setResize(window.innerHeight);
+    setResize(window.innerHeight);
   };
   useEffect(() => {
     setResize(window.innerHeight);
@@ -65,8 +66,8 @@ export default function Portfolio({
                       pFocus === portfolioIdx
                         ? pClick
                           ? "0px"
-                          : `${180 + (resize - 880) / 2}px`
-                        : `${180 + (resize - 880) / 2}px`,
+                          : `${180 + (resize < 880 ? 0 : resize - 880) / 2}px`
+                        : `${180 + (resize < 880 ? 0 : resize - 880) / 2}px`,
                     // opacity: Math.abs(pFocus - portfolioIdx) > 2 ? 0 : 1,
 
                     left: `calc(50% - ${
@@ -106,7 +107,7 @@ export default function Portfolio({
                   <div
                     className="portfolio-box-in"
                     style={
-                      pClick
+                      pFocus === portfolioIdx && pClick
                         ? {
                             height: `calc(${resize}px - 64px)`,
                             overflowY: "scroll",
@@ -137,10 +138,17 @@ export default function Portfolio({
                         <a
                           key={linkIdx}
                           href={link}
-                          className="portfolio-link"
+                          className={
+                            "portfolio-link " +
+                            (pClick &&
+                              link !== "준비중" &&
+                              "portfolio-link-act")
+                          }
                           style={{
-                            pointerEvents: pClick ? "auto" : "none",
-                            cursor: pClick ? "pointer" : "auto",
+                            pointerEvents:
+                              pClick && link !== "준비중" ? "auto" : "none",
+                            cursor:
+                              pClick && link !== "준비중" ? "pointer" : "auto",
                           }}
                           target="_blank"
                         >
@@ -153,12 +161,14 @@ export default function Portfolio({
                                 : Android
                             }
                           />
-                          <span>{link}</span>
+                          {link}
                         </a>
                       );
                     })}
                     <a
-                      className="portfolio-link"
+                      className={
+                        "portfolio-link " + (pClick && "portfolio-link-act")
+                      }
                       href={portfolio.githubLink}
                       style={{
                         pointerEvents: pClick ? "auto" : "none",
@@ -167,34 +177,66 @@ export default function Portfolio({
                       target="_blank"
                     >
                       <img src={Github} />
-                      <span>{portfolio.githubLink}</span>
+                      {portfolio.githubLink}
                     </a>
 
-                    <div style={{ width: "298px" }}>
-                      {len === 1 && (
+                    <div className="portfolio-imgExplan-box">
+                      <div>
+                        {len === 1 && (
+                          <div
+                            className={
+                              "portfolio-img portfolio-internet-fstImg"
+                            }
+                          >
+                            <img src={portfolio.images[0]} />
+                          </div>
+                        )}
                         <div
-                          className={"portfolio-img portfolio-internet-fstImg"}
+                          className={
+                            "portfolio-img-box" + (len === 1 ? " -gif" : "")
+                          }
                         >
-                          <img src={portfolio.images[0]} />
+                          {portfolio.images.map((img: any, imgIdx: number) => {
+                            return len === 1 && imgIdx === 0 ? (
+                              <></>
+                            ) : (
+                              <div
+                                key={imgIdx}
+                                className={
+                                  "portfolio-img portfolio" +
+                                  (len === 1 ? "-internet-img" : "-app-img")
+                                }
+                              >
+                                {/* <img src={img} /> */}
+                                <img src={img} />
+                              </div>
+                            );
+                          })}
                         </div>
-                      )}
-                      <div className="portfolio-img-box">
-                        {portfolio.images.map((img: any, imgIdx: number) => {
-                          return len === 1 && imgIdx === 0 ? (
-                            <></>
-                          ) : (
-                            <div
-                              key={imgIdx}
-                              className={
-                                "portfolio-img portfolio" +
-                                (len === 1 ? "-internet-img" : "-app-img")
-                              }
-                            >
-                              <img src={img} />
-                            </div>
-                          );
-                        })}
                       </div>
+
+                      <ul className="portfolio-explanation">
+                        {portfolio.explans.map(
+                          (explan: any, explanIdx: number) => {
+                            return explan.title === undefined ? (
+                              <li key={explanIdx}>{explan}</li>
+                            ) : (
+                              <div key={explanIdx}>
+                                <li>{explan.title}</li>
+                                <ul className="portfolio-explanation">
+                                  {explan.secExplans.map(
+                                    (secExplan: any, secExplanIdx: number) => {
+                                      return (
+                                        <li key={secExplanIdx}>{secExplan}</li>
+                                      );
+                                    }
+                                  )}
+                                </ul>
+                              </div>
+                            );
+                          }
+                        )}
+                      </ul>
                     </div>
                   </div>
                 </div>
